@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>🚀 BDSF Deployment</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+    <h1>What is the Value of this House 💰💰💰?</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+        <input type="text" name="OverallQual" placeholder="OverallQual (3-10)" required="required" />
+        <input type="text" name="GrLivArea" placeholder="GrLivArea (520 -5642)" required="required" />
+        <input type="text" name="GarageCars" placeholder="GarageCars(0-4)" required="required" />
+        <input type="text" name="GarageArea" placeholder="GarageArea (0-1418)" required="required" />
+        <input type="text" name="KitchenAbvGr" placeholder="KitchenAbvGr (0-3)" required="required" />
+        <input type="text" name="EnclosedPorch" placeholder="EnclosedPorch (0-552)" required="required" />
+        <input type="text" name="MSSubClass" placeholder="MSSubClass (20-190)" required="required" />
+        <input type="text" name="OverallCond" placeholder="OverallCond (2-9)" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Find Out! 🚀</button>
+    </form>
+
+   <h1>Predicted Value of the House is : {{ prediction_text }}</h1>
+
+ </div>
+
+
+</body>
+</html>
